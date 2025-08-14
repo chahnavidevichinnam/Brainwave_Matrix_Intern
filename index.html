@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💰 My Expense Tracker</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>💰 My Expense Tracker</h1>
+    <div class="summary">
+      <div class="card income">
+        <span>Income</span>
+        <p id="total-income">₹0</p>
+      </div>
+      <div class="card expense">
+        <span>Expense</span>
+        <p id="total-expense">₹0</p>
+      </div>
+      <div class="card balance">
+        <span>Balance</span>
+        <p id="total-balance">₹0</p>
+      </div>
+    </div>
+    <form id="transaction-form" autocomplete="off">
+      <input type="text" id="title" placeholder="Title" required/>
+      <input type="number" id="amount" placeholder="Amount" required min="0"/>
+      <select id="type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <select id="category">
+        <option>Food</option>
+        <option>Transport</option>
+        <option>Shopping</option>
+        <option>Salary</option>
+        <option>Bills</option>
+        <option>Others</option>
+      </select>
+      <input type="date" id="date" required/>
+      <button type="submit">Add Transaction</button>
+    </form>
+
+    <!-- Transaction Filters -->
+    <div class="filters">
+      <input type="text" id="search" placeholder="Search by title..."/>
+      <select id="filter-type">
+        <option value="all">All Types</option>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <select id="filter-category">
+        <option value="all">All Categories</option>
+        <option>Food</option>
+        <option>Transport</option>
+        <option>Shopping</option>
+        <option>Salary</option>
+        <option>Bills</option>
+        <option>Others</option>
+      </select>
+    </div>-
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Amount</th>
+          <th>Type</th>
+          <th>Category</th>
+          <th>Date</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="transaction-table"></tbody>
+    </table>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
